@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>Veðurfréttir</title>
+	</head>
+	<body>
+		<h1>Veldu þá {{stadi}} á landinu sem þú vilt sjá veðurspá frá</h1>
+
+<h5> Veldur það sem á að sýna </h5>
+
+
+<div class="checkbox"
+<label style="word-wrap:break-word">
+    <input type="checkbox" name="a" value="edit" vspace="2"> a
+</label>
+</div>
+<div class="checkbox"
+<label style="word-wrap:break-word">
+    <input type="checkbox" name="b" value="edit"> b
+</label>
+</div>
+
+
+
+<h5>Veldu staðsetningu sem þú vilt skoða:</h5>
+{% for lykl in lyklarnir %}
+<div class="checkbox">
+<label>
+    <input type="checkbox" name="{{lykl}}" value="edit" vspace="2"> {{lykl}}
+</label>
+</div>
+{% endfor %}
+</div>
+	</body>
+</html>

@@ -1,0 +1,174 @@
+Reykjavík,1
+Stafholtsey,108
+Bláfeldur,167
+Stykkishólmur,178
+Ásgarður,195
+Hólar í Dýrafirði,234
+Bolungarvík,252
+Litla-Ávík,293
+Bergstaðir,361
+Sauðanesviti,400
+Akureyri,422
+Mánárbakki,479
+Grímsstaðir,495
+Miðfjarðarnes,515
+Skjaldþingsstaðir,527
+Egilsstaðaflugvöllur,571
+Dalatangi,620
+Höfn í Hornafirði,705
+Vatnsskarðshólar,802
+Eyrarbakki,923
+Hjarðarland,931
+Keflavíkurflugvöllur,990
+Keflavíkurflugvöllur,1350
+Grindavík,1361
+Eyrarbakki,1395
+Garðskagaviti,1453
+Straumsvík,1473
+Reykjavík,1475
+Reykjavíkurflugvöllur,1477
+Korpa,1479
+Geldinganes,1480
+Hólmsheiði,1481
+Bláfjöll,1486
+Bláfjallaskáli,1487
+Hellisskarð,1490
+Ölkelduháls,1493
+Skarðsmýrarfjall,1496
+Skrauthólar,1578
+Skálafell,1590
+Þingvellir,1596
+Hafnarmelar,1673
+Skarðsheiði Miðfitjahóll,1679
+Þyrill,1685
+Botnsheiði,1689
+Hvanneyri,1779
+Fíflholt á Mýrum,1868
+Litla-Skarð,1881
+Gufuskálar,1919
+Ólafsvík,1924
+Bláfeldur,1936
+Grundarfjörður,1938
+Stykkishólmur,2050
+Ásgarður,2175
+Reykir í Hrútafirði,2197
+Reykhólar,2266
+Bjargtangar,2304
+Lambavatn,2315
+Patreksfjörður,2319
+Tálknafjörður,2323
+Arnkatla,2370
+Bíldudalur,2428
+Bjarnarfjarðarháls,2480
+Hólmavík,2481
+Flateyri,2631
+Þverfjall,2636
+Seljalandsdalur,2640
+Seljalandsdalur - skíðaskáli,2641
+Ísafjörður,2642
+Súðavík,2646
+Æðey,2655
+Gjögurflugvöllur,2692
+Bolungarvík,2738
+Sléttunes Jökulfjörðum,2841
+Hornbjargsviti,2862
+Austurárdalsháls,3007
+Sáta,3054
+Haugur,3103
+Grímstunguheiði,3122
+Brúsastaðir,3223
+Kolka,3225
+Nautabú,3242
+Svartárkot,3292
+Blönduós,3317
+Torfur,3371
+Reykir í Fnjóskadal,3380
+Sauðárkrókur flugvöllur,3433
+Möðruvellir,3463
+Akureyri - Krossanesbraut,3471
+Vaðlaheiði,3474
+Végeirsstaðir í Fnjóskadal,3477
+Gæsafjöll,3490
+Staðarhóll,3591
+Sóleyjarflatamelar,3595
+Ólafsfjörður,3658
+Húsavík,3696
+Skagatá,3720
+Siglufjörður,3752
+Siglunes,3754
+Flatey á Skjálfanda,3779
+Mánárbakki,3797
+Grímsey,3976
+Upptyppingar,4019
+Hallormsstaður,4060
+Seyðisfjörður,4182
+Dalatangi,4193
+Gagnheiði,4275
+Mývatn,4300
+Grímsstaðir á Fjöllum,4323
+Krafla,4406
+Skjaldþingsstaðir,4455
+Bjarnarey,4472
+Þeistareykir,4500
+Ásbyrgi,4614
+Miðfjarðarnes,4652
+Raufarhöfn,4828
+Möðrudalur,4830
+Fontur,4867
+Rauðinúpur,4912
+Ingólfshöfði,5210
+Fagurhólsmýri,5309
+Kvísker,5316
+Papey,5777
+Brúaröræfi,5825
+Innri Sauðá,5847
+Teigarhorn,5872
+Kambanes,5885
+Brúarjökull B10,5932
+Kárahnjúkar,5933
+Brú á Jökuldal,5940
+Eyjabakkar,5943
+Hallormsstaðaháls,5960
+Brúðardalur,5968
+Þórdalsheiði,5969
+Hallsteinsdalsvarp,5970
+Kollaleira,5975
+Eskifjörður,5981
+Fáskrúðsfjörður Ljósaland,5982
+Vattarnes,5988
+Neskaupstaður,5990
+Neskaupstaður - Drangagil,5992
+Seley,5993
+Surtsey,6012
+Vestmannaeyjabær,6015
+Stórhöfði,6017
+Vatnsskarðshólar,6045
+Önundarhorn,6134
+Skarðsfjöruviti,6176
+Þykkvibær,6208
+Sámsstaðir,6222
+Tindfjöll,6235
+Básar á Goðalandi,6237
+Kirkjubæjarklaustur - Stjórnarsandur,6272
+Kálfhóll,6310
+Hella,6315
+Árnes,6420
+Mörk á Landi,6424
+Búrfell,6430
+Lónakvísl,6459
+Laufbali,6472
+Skaftafell,6499
+Hjarðarland,6515
+Vatnsfell,6546
+Veiðivatnahraun,6657
+Jökulheimar,6670
+Setur,6748
+Þúfuver,6760
+Hágöngur,6776
+Húsafell,6802
+Hveravellir,6935
+Sandbúðir,6975
+Ólafsfjörður - Tindaöxl,7659
+Bolungarvík - Traðargil,7736
+Siglufjörður - Hafnarfjall,7753
+Þverfellshorn á Esju,10002
