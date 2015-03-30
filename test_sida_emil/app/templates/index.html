@@ -7,28 +7,30 @@
 
 <h5> Veldur það sem á að sýna </h5>
 
-
+<form action="/saekja" method="POST">	
+	<input type="submit"/>
 <div class="checkbox"
-<label style="word-wrap:break-word">
-    <input type="checkbox" name="a" value="edit" vspace="2"> a
+<label>
+    <input type="checkbox" name="still" value="edit" vspace="2"> a
 </label>
 </div>
 <div class="checkbox"
-<label style="word-wrap:break-word">
-    <input type="checkbox" name="b" value="edit"> b
+<label>
+    <input type="checkbox" name="still" value="edit"> b
 </label>
 </div>
 
 
 
 <h5>Veldu staðsetningu sem þú vilt skoða:</h5>
-{% for lykl in lyklarnir %}
-<div class="checkbox">
-<label>
-    <input type="checkbox" name="{{lykl}}" value="edit" vspace="2"> {{lykl}}
-</label>
-</div>
-{% endfor %}
-</div>
-	</body>
+
+	{% for lykl in lyklarnir %}
+		<div class="checkbox">
+			<label>
+    			<input type="checkbox" name="stod" value={{lykl}} vspace="2"> {{lykl}}
+			</label>
+		</div>
+	{% endfor %}
+</form>
+</body>
 </html>
