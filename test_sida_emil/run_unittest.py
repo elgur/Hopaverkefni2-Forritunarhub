@@ -1,31 +1,17 @@
 import os
 import unittest
 from app import app
-import invidi
+from invidi import gogn
 
 
 class FlaskTest(unittest.TestCase):
-
-	'''
-	Prófum uppsetningu
-	'''
-	def setUp(self):
-		app.config['TESTING'] = True
-		self.app = app.test_client()
-		db.create_all()
-	'''
-	prófum niðurtöku
-	'''
-	def tearDown(self):
-		db.session.remove()
-		db.drop_all()
 	'''
 	prófum hvort csv-file er tekinn inn
 	'''
 	def test_csv(self):
 		sott_tmp = gogn.csvDict("dop.csv")
 		sott_tmp = gogn.stafrofsrod(sott_tmp)
-		sott = sott[0]
+		sott = sott_tmp[0]
 		rett = 'Akureyri'
 		assert sott == rett
 	'''
