@@ -18,20 +18,31 @@ lykl = []
 for x in sorted(lyklar):
 	lykl.append(x)
 ## setja inn í class?
-stillingar = [ ]
+stillingar = []
+"""
+Hér fyrir neðan er server vefsíðunar keyrður.
 
+"""
 @app.route('/', methods = ['GET','POST'])
 @app.route('/index', methods = ['GET','POST'])
 def index():
-		print(nofni)
+	# Þetta fall skilar index() síðu veðurfrétta
+	# stillingar eru tómar í byrjun.
 		return render_template('index.html',
 								stadi='staði',
 								lyklarnir =lykl,
-								ordabok = nofni)
+								ordabok = nofni,
+								still = stillingar)
 @app.route('/saekja', methods=['GET','POST'])
 def saekja_box():
+	#þetta fall sækir upplýsinfar er ýtt er á post
+	# á síðunni
 	stillingar = request.form.getlist('still')
 	stodvar = request.form.getlist('stod') 
 	print(stillingar)
 	print(stodvar)
-	return index()
+	return render_template('index.html',
+								stadi='staði',
+								lyklarnir =lykl,
+								ordabok = nofni,
+								still = stillingar)

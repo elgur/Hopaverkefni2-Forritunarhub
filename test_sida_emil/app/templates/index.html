@@ -3,31 +3,40 @@
 		<title>Veðurfréttir</title>
 	</head>
 	<body>
-		<h1>Veldu þá {{stadi}} á landinu sem þú vilt sjá veðurspá frá</h1>
+		{% if still|length < 1 %}
+			<h1>Velkominn í Veðurspá </h1>
+		{% else %}
+			<h1> Þín einkaspá </h1>
+		{% endif %}
 
-<h5> Veldur það sem á að sýna </h5>
+
+
 
 <form action="/saekja" method="POST">	
-	<input type="submit"/>
+	<input value="sækja" type="submit"/> 
+<h5> Veldur það sem á að sýna </h5>
 <div class="checkbox"
 <label>
-    <input type="checkbox" name="still" value="edit" vspace="2"> a
+    <input type="radio" name="still" value="T" vspace="2"> Hitastig
 </label>
 </div>
 <div class="checkbox"
 <label>
-    <input type="checkbox" name="still" value="edit"> b
+    <input type="radio" name="still" value="edit"> b
 </label>
 </div>
 
 
 
 <h5>Veldu staðsetningu sem þú vilt skoða:</h5>
-
+{#
+For lykja sem keyrir í gengum stöðvar sem eru til 
+staðar og birtir hnappa til að velja.
+#}
 	{% for lykl in lyklarnir %}
 		<div class="checkbox">
 			<label>
-    			<input type="checkbox" name="stod" value={{ordabok[lykl]}} vspace="2"> {{lykl}}
+    			<input type="radio" name="stod" value={{ordabok[lykl][0]}} vspace="2"> {{lykl}}
 			</label>
 		</div>
 	{% endfor %}
