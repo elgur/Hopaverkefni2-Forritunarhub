@@ -1,25 +1,15 @@
 from flask import render_template, request, jsonify
 from app import app
-import csv
 from invidi import gogn
-# setja inn í class ?
-#
-# setja í inviði
-# 
-def csvDict(skra):
-	with open(skra) as csvfid:
-		a = csv.reader(csvfid,delimiter=',')
-		return {row[0]:row[1:] for row in a}
-#
-# setja í inviði
-#
-nofni = csvDict("dop.csv")
-lyklar = list(nofni.keys())
-lykl = []
-for x in sorted(lyklar):
-	lykl.append(x)
-## setja inn í class?
+''' 
+
+Frum stillingar og gögn
+
+'''
+nofni = gogn.csvDict("dop.csv")
+lyklar =  gogn.stafrofsrod(nofni)
 stillingar = []
+
 """
 Hér fyrir neðan er server vefsíðunar keyrður.
 
@@ -31,7 +21,7 @@ def index():
 	# stillingar eru tómar í byrjun.
 		return render_template('index.html',
 								stadi='staði',
-								lyklarnir =lykl,
+								lyklarnir =lyklar,
 								ordabok = nofni,
 								still = stillingar)
 @app.route('/saekja', methods=['GET','POST'])
@@ -43,12 +33,13 @@ def saekja_box():
 	stodvar = request.form.getlist('stod')
 	uppl_data,spa_data = gogn.saekja(stodvar[0])
 	vedur_uppl = uppl_data['results'][0]
-
-	print(stillingar)
-	print(stodvar)
+	## staðsetning debug prentunar
+	# hér þarf að taka # í burtu
+	#print(stillingar)
+	#print(stodvar)
 	return render_template('index.html',
 								stadi='staði',
-								lyklarnir =lykl,
+								lyklarnir =lyklar,
 								ordabok = nofni,
 								still = stillingar,
 								uppl=vedur_uppl)
