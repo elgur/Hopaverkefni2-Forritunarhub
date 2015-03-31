@@ -3,7 +3,7 @@ import csv
 l = 1
 with open('diggeroutput.csv','w',newline='') as csvfile:
 	skrifari = csv.writer(csvfile) 
-	for k in range(1,12):
+	for k in range(1,100):
 		grunn_uppl = 'http://apis.is/weather/observations/is?stations='
 		for i in range(l,l+999):
 			if i == l:
@@ -24,7 +24,7 @@ with open('diggeroutput.csv','w',newline='') as csvfile:
 				skrifari.writerow(output)
 		finally:
 			l = l + 999
-			print(l)
+			#print(l)
 
  
 #print(grunn_uppl)

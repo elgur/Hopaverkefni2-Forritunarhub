@@ -1,10 +1,10 @@
 import urllib.request, json
 import csv
 l = 1
-with open('diggeroutputbaranofn.csv','w',newline='') as csvfile:
+with open('dopvedur.csv','w',newline='') as csvfile:
 	skrifari = csv.writer(csvfile) 
-	for k in range(1,12):
-		grunn_uppl = 'http://apis.is/weather/observations/is?stations='
+	for k in range(1,10):
+		grunn_uppl = 'http://apis.is/weather/forecasts/is?stations='
 		for i in range(l,l+999):
 			if i == l:
 				grunn_uppl = grunn_uppl+str(i)
