@@ -7,6 +7,7 @@
 			<h1>Velkominn í Veðurspá </h1>
 		{% else %}
 			<h1> Þín einkaspá </h1>
+		<p> Á/Í {{uppl['name']}} er {{uppl['T']}} °C stiga hiti og {{uppl['W']}}
 		{% endif %}
 
 
@@ -14,7 +15,7 @@
 
 <form action="/saekja" method="POST">	
 	<input value="sækja" type="submit"/> 
-<h5> Veldur það sem á að sýna </h5>
+<h5> Veldu það sem á að sýna </h5>
 <div class="checkbox"
 <label>
     <input type="radio" name="still" value="T" vspace="2"> Hitastig

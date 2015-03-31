@@ -1,6 +1,7 @@
 from flask import render_template, request, jsonify
 from app import app
 import csv
+from invidi import gogn
 # setja inn í class ?
 #
 # setja í inviði
@@ -37,12 +38,17 @@ def index():
 def saekja_box():
 	#þetta fall sækir upplýsinfar er ýtt er á post
 	# á síðunni
+	# sækjum upplýsingar frá templetinu
 	stillingar = request.form.getlist('still')
-	stodvar = request.form.getlist('stod') 
+	stodvar = request.form.getlist('stod')
+	uppl_data,spa_data = gogn.saekja(stodvar[0])
+	vedur_uppl = uppl_data['results'][0]
+
 	print(stillingar)
 	print(stodvar)
 	return render_template('index.html',
 								stadi='staði',
 								lyklarnir =lykl,
 								ordabok = nofni,
-								still = stillingar)
+								still = stillingar,
+								uppl=vedur_uppl)
