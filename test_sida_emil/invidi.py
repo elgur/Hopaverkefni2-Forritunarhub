@@ -1,7 +1,16 @@
 import urllib.request, json
 import csv
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+from matplotlib.figure import Figure
+from matplotlib.dates import DateFormatter
+import numpy
+import io
+import base64
+from flask import send_file
+
 class gogn:
-	def _init_():
+	def __init__():
 		pass
 	def saekja(stodvanumer):
 		'''
@@ -36,3 +45,33 @@ class gogn:
 		for x in sorted(lyklar):
 			lykl.append(x)
 		return lykl
+class mynd:
+	def __init__():
+		pass
+	def prentamynd(gogn,hvad,myndin):
+		mynd = Figure()
+		ygogn = []
+		xgogn = []
+		for i in gogn['results'][0]['forecast']:
+			ygogn.append(i[hvad])
+			xgogn.append(i['ftime'])
+		y_min = min(min([map(int, ygogn)]))
+		y_max = max(max([map(int, ygogn)]))
+		plt.plot(range(0,len(xgogn)),ygogn,'r-',label=gogn['results'][0]['name'])
+		plt.xlim(0, len(xgogn))
+		plt.ylim(y_min-1,y_max+1)
+		plt.ylabel(hvad)
+		plt.xlabel('Spa nr.')
+		plt.grid('on')
+		plt.xticks(range(0,len(xgogn)), xgogn, rotation=45, fontsize=7) 
+		plt.margins(1)
+		plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,ncol=2, mode="expand", borderaxespad=0.)
+		plt.savefig(myndin,format ='png')
+		
+		
+		'''
+		mynd.savefig('drasl.png', dpi=320, facecolor='w', edgecolor='w',
+		        orientation='landscape', papertype='a3', format=None,
+		        transparent=False, bbox_inches='tight', pad_inches=0.3,
+		        frameon=None)
+		'''
