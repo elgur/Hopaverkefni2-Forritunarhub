@@ -1,43 +1,31 @@
 <html>
 	<head>
-		<title>Veðurfréttir</title>
+		
+			<title>Veðurfréttir</title>
+		
 	</head>
 	<body>
-		{% if still|length < 1 %}
+<div align="center">
 			<h1>Velkominn í Veðurspá </h1>
-		{% else %}
-			<h1> Þín einkaspá </h1>
-			<img src="image.png" style = "width:400px;height:300px">
-		<p> Á/Í {{uppl['name']}} er {{uppl['T']}} °C stiga hiti og {{uppl['W']}}
-		{% endif %}
-
-
-
-
-<form action="/saekja" method="POST">	
-	<input value="sækja" type="submit"/> 
-<h5> Veldu það sem á að sýna </h5>
-<div class="checkbox"
-<label>
-    <input type="radio" name="still" value="T" vspace="2"> Hitastig
-</label>
 </div>
 
-
-
+<form action="/saekja" method="POST">	
+<div align="center">
 
 <h5>Veldu staðsetningu sem þú vilt skoða:</h5>
 {#
 For lykja sem keyrir í gengum stöðvar sem eru til 
 staðar og birtir hnappa til að velja.
 #}
-	{% for lykl in lyklarnir %}
-		<div class="checkbox">
-			<label>
-    			<input type="radio" name="stod" value={{ordabok[lykl][0]}} vspace="2"> {{lykl}}
-			</label>
-		</div>
-	{% endfor %}
+	
+		<select name="stod">
+    			{% for lykl in lyklarnir %}
+    			<option value={{ordabok[lykl][0]}} vspace="2"> {{lykl}}
+				</option>
+				{% endfor %}
+		</select>
+	<input value="sækja" type="submit"/> 	
 </form>
+</div>
 </body>
 </html>

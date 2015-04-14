@@ -49,12 +49,6 @@ class mynd:
 	def __init__():
 		pass
 	def prentamynd(gogn,hvad,myndin):
-		'''
-
-		Þetta fall plotar valinn gögn og skilar þeim inn
-		í "myndin" 
-
-		'''
 		plt.clf()
 		ygogn = []
 		xgogn = []
@@ -63,10 +57,10 @@ class mynd:
 			xgogn.append(i['ftime'])
 		y_min = min(min([map(int, ygogn)]))
 		y_max = max(max([map(int, ygogn)]))
-		plt.plot(range(0,len(xgogn)),ygogn,'r-')#,label=gogn['results'][0]['name'])
+		plt.plot(range(0,len(xgogn)),ygogn,'r-',label=gogn['results'][0]['name'])
 		plt.xlim(0, len(xgogn))
 		plt.ylim(y_min-1,y_max+1)
-		#plt.ylabel(hvad)
+		plt.ylabel(hvad)
 		plt.xlabel('Spa nr.')
 		plt.grid('on')
 		plt.xticks(range(0,len(xgogn)), xgogn, rotation=45, fontsize=7) 
@@ -74,3 +68,10 @@ class mynd:
 		plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=3,ncol=2, mode="expand", borderaxespad=0.)
 		plt.savefig(myndin,format ='png')
 		
+		
+		'''
+		mynd.savefig('drasl.png', dpi=320, facecolor='w', edgecolor='w',
+		        orientation='landscape', papertype='a3', format=None,
+		        transparent=False, bbox_inches='tight', pad_inches=0.3,
+		        frameon=None)
+		'''

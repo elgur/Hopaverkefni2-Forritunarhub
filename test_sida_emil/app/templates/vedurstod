@@ -1,0 +1,93 @@
+<html>
+	<head>
+		<title>Veðurfréttir</title>
+	</head>
+	<body>
+		{% if still|length < 1 %}
+			<h1>Velkominn í Veðurspá </h1>
+		{% else %}
+			<h1> Þín einkaspá fyrir {{uppl['name']}}</h1>
+			<img src="plotid2.png" style = "width:200px;height:200px">
+
+
+		<p> Spá var gerð {{uppl['atime']}}</p>
+		<p> 
+		Á/Í {{uppl['name']}} er {{uppl['T']}} °C stiga hiti 
+		{% if uppl['W'] == '' %}
+		og 
+		{% else %}
+		,
+		{% endif %}
+		{% if uppl['D'] == 'N' %}
+		norðan
+		{% elif uppl['D'] == 'NE' %}
+		norðaustan
+		{% elif uppl['D'] == 'NNE' %}
+		norðnorðaustan
+		{% elif uppl['D'] == 'NNV' %}
+		norðnorðvestan
+		{% elif uppl['D'] == 'NV' %}
+		norðvestan
+		{% elif uppl['D'] == 'S' %}
+		sunnan
+		{% elif uppl['D'] == 'SE' %}
+		suðaustan
+		{% elif uppl['D'] == 'SSE' %}
+		suðsuðaustan
+		{% elif uppl['D'] == 'SSV' %}
+		suðsuðvestan
+		{% elif uppl['D'] == 'SV' %}
+		suðvestan
+		{% elif uppl['D'] == 'E' %}
+		austan
+		{% elif uppl['D'] == 'ENE' %}
+		austnorðaustan
+		{% elif uppl['D'] == 'ESE' %}
+		austsuðaustan
+		{% elif uppl['D'] == 'V' %}
+		vestan
+		{% elif uppl['D'] == 'VNV' %}
+		vestnorðvestur
+		{% elif uppl['D'] == 'VSV' %}
+		vestsuðvestan 
+		{% endif %}
+		{% if uppl['F'] != ''%}
+		{{uppl['F']}} m/s
+		{% endif %}
+		{% if uppl['W'] != '' %}
+		og {{uppl['W']}}
+		{% endif %}
+		</p>
+		{% endif %}
+
+
+
+
+<form action="/saekja" method="POST">	
+	<input value="sækja" type="submit"/> 
+<h5> Veldu það sem á að sýna </h5>
+<div class="checkbox"
+<label>
+    <input type="radio" name="still" value="T" vspace="2"> Hitastig
+</label>
+</div>
+
+
+
+
+<h5>Veldu staðsetningu sem þú vilt skoða:</h5>
+{#
+For lykja sem keyrir í gengum stöðvar sem eru til 
+staðar og birtir hnappa til að velja.
+#}
+	
+		<select name="stod">
+    			{% for lykl in lyklarnir %}
+    			<option value={{ordabok[lykl][0]}} vspace="2"> {{lykl}}
+				</option>
+				{% endfor %}
+		</select>
+	
+</form>
+</body>
+</html>

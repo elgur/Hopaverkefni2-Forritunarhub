@@ -36,50 +36,39 @@ def saekja_box():
 	þetta fall sækir upplýsingar er ýtt er á post
 	á síðunni. skilar þeim inní session. 
 	'''
+	stillingar = request.form.getlist('still')
 	stodvar = request.form.getlist('stod')
 	uppl_data,spa_data = gogn.saekja(stodvar[0])
 	session['spagogn'] = spa_data
+	session['stilur'] = stillingar
 	vedur_uppl = uppl_data['results'][0]
-	vedur_timasetningar = gogn.textabrot(spa_data)
-	return render_template('vedurstod.html',
+
+	return render_template('index.html',
 							lyklarnir =lyklar,
 							ordabok = nofni,
 							uppl=vedur_uppl,
 							still = stillingar),
 
 
-@app.route('/plothiti.png')
-def myndhiti():
+@app.route('/plotid2.png')
+def myndin():
 	'''
 	Myndin er uppi í 5 sekúndur. Eftir það er
 	kallað aftur á þetta fall. 
 	'''
 	spa_data=session['spagogn']
+	stillingar=session['stilur']
+	print(spa_data)
+	print(stillingar)
 	plotid = io.BytesIO()
-	mynd.prentamynd(spa_data,'T',plotid)
+	mynd.prentamynd(spa_data,stillingar[0],plotid)
 	plotid.seek(0)
 	return send_file(plotid,
 		# Myndin er upp í 5 sec.
 					cache_timeout = 5,
 					mimetype='image/png',
-					attachment_filename="plothiti.png",
+					attachment_filename="plotid2.png",
 					as_attachment=True)
 
-@app.route('/plotregn.png')
-def myndregn():
-	'''
-	Myndin er uppi í 5 sekúndur. Eftir það er
-	kallað aftur á þetta fall. 
-	'''
-	spa_data=session['spagogn']
-	plotid = io.BytesIO()
-	mynd.prentamynd(spa_data,'R',plotid)
-	plotid.seek(0)
-	return send_file(plotid,
-		# Myndin er upp í 5 sec.
-					cache_timeout = 8,
-					mimetype='image/png',
-					attachment_filename="plotregn.png",
-					as_attachment=True)
 
 app.secret_key = os.urandom(24)

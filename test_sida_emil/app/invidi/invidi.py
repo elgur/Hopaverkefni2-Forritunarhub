@@ -45,6 +45,21 @@ class gogn:
 		for x in sorted(lyklar):
 			lykl.append(x)
 		return lykl
+	def textabrot(spa_data):
+		'''
+			Þetta fall breytir upplýsingum og kemur þeim á formið
+			Dagsetning:tímasetnig:gögn
+		'''
+		vedur_timasetningar = {}
+		for i in spa_data['results'][0]['forecast']:
+			i_tmp =dict(i) # gerum afrit af dict. svo orginal uppfærist ekki.
+			i_tmp.pop('ftime',None) # fjarlægum tíma.
+			if i['ftime'][0:10] not in vedur_timasetningar.keys():
+				vedur_timasetningar[i['ftime'][0:10]] = [{i['ftime'][-8:]:i_tmp}]
+			else:
+				vedur_timasetningar[i['ftime'][0:10]][0].update({i['ftime'][-8:]:i_tmp})
+		return vedur_timasetningar
+
 class mynd:
 	def __init__():
 		pass
