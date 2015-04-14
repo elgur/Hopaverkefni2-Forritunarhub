@@ -76,8 +76,8 @@ class mynd:
 		for i in gogn['results'][0]['forecast']:
 			ygogn.append(i[hvad])
 			xgogn.append(i['ftime'])
-		y_min = min(min([map(int, ygogn)]))
-		y_max = max(max([map(int, ygogn)]))
+		y_min = min(min([map(float, ygogn)]))
+		y_max = max(max([map(float, ygogn)]))
 		plt.plot(range(0,len(xgogn)),ygogn,'r-')#,label=gogn['results'][0]['name'])
 		plt.xlim(0, len(xgogn))
 		plt.ylim(y_min-1,y_max+1)
